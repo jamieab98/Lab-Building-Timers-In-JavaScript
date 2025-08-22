@@ -22,25 +22,30 @@
  * Example Usage:
  * stopRecurringTimer(timerId); // Stops the recurring timer started with the given ID.
  */
-
+let tracker = 0;
 function recurringTimer(message, interval) {
-  const intervalSeconds = interval / 1000;
-  let tracker = 0;
-  function displayPastTime() {
-    console.log(message);
-    tracker += intervalSeconds;
+  function displayMessage() {
+    if (tracker >= 7000) {
+      stopRecurringTimer(intervalId);
+      console.log('Time is up');
+      return tracker;
+    } else {
+  console.log(message);
+  tracker += interval;}
   }
-  const intervalID = setInterval(displayPastTime, interval)
+  const intervalId = setInterval(displayMessage, interval)
+  return tracker;
 }
-
-recurringTimer("Hello World", 2000)
-
+const timerId = recurringTimer("Hello World", 2000)
   // Set up a timer using setInterval to log the message
   // Return the timer ID
 
 
-function stopRecurringTimer(timerId) {
+function stopRecurringTimer(intervalId) {
+  clearInterval(intervalId);
   // Stop the timer using clearInterval
 }
+
+stopRecurringTimer();
 
 module.exports = { recurringTimer, stopRecurringTimer };
