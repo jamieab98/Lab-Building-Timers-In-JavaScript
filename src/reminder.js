@@ -16,7 +16,6 @@ function delayedReminder(message, delay) {
   function displayMessage() {
     console.log(firstMessage);
   }
-  //displayMessage(message)
   setTimeout(displayMessage, delay)
   // Return a promise
   // Use setTimeout to log the message after the specified delay
