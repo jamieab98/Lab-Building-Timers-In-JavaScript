@@ -24,8 +24,7 @@ function countdownTimer(startTime, interval) {
     startTime -= interval/1000;
     return remainingTime;
   }
-
-const myInterval = setInterval(updateTime, interval);
+  const myInterval = setInterval(updateTime, interval);
 
   // Initialize the remaining time
   // Set up a timer using setInterval
